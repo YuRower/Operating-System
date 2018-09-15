@@ -5,6 +5,7 @@ run lab1
 $ gcc -o result/result main1.c functs.c -lm
 cd result
 ./result
+
 run SeparateCompilation
 gcc -c main1.c
 cd mylib
