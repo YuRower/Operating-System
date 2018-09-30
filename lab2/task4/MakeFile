@@ -1,0 +1,8 @@
+main.o: main.c
+	gcc -c main.c
+ArrayList.o: mylib/ArrayList.c
+	gcc -c mylib/ArrayList.c
+arlist : main.o mylib/ArrayList.o
+	gcc -o ar main.o mylib/ArrayList.o
+	rm -rf *.o mylib/*.o
+all: arlist
