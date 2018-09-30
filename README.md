@@ -30,9 +30,11 @@ run MakeFile
 make finalresult
 
 ./finalresult
+
 -------------------------
 run laba2 task0 
 use MakeFile
+
 -------------------------
 run laba2 task4
 use SeparateCompilation
