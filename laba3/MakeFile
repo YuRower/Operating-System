@@ -1,0 +1,25 @@
+OUTFILENAME = laba3_environ
+CC = gcc
+CFLAGS = -Wall -std=c99
+OBJS = laba3_environ.o
+SRCS = laba3_environ.c
+OBJSF = functs.o
+SRCSF = functs.c
+
+compileProg: $(OBJS) $(OBJSF)
+	$(CC) $(OBJS) $(OBJSF) -o $(OUTFILENAME)
+
+$(OBJS): $(SRCS)
+	$(CC) $(CFLAGS) $(SRCS)
+
+$(OBJSF): $(SRCSF)
+	$(CC) $(CFLAGS) $(SRCSF)
+
+run:$(OUTFILENAME)
+	./$(OUTFILENAME)
+	./$(OUTFILENAME) --h
+	
+
+clean:
+rm -rf *o $(OUTFILENAME)
+all: compileProg
