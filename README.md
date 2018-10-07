@@ -38,3 +38,8 @@ use MakeFile
 -------------------------
 run laba2 task4
 use SeparateCompilation
+
+-------------------------------
+run laba3 
+use MakeFile
+
