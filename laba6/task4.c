@@ -12,22 +12,20 @@ typedef unsigned long long ull;
 	void * arr;
  }; 
 
-/*long factorial(int n)
-{
+long factorial(int n){
   if (n == 0)
     return 1;
   else
     return(n * factorial(n-1));
-}*/
-
-/*ull catalan(int n)
-{
-	return n ? factorial(2 * n)/(factorial(n+1)*factorial(n)) : 1;
-}*/
+}
 
 ull catalan(int n){
-	return n ? 2 * (2 * n - 1) * catalan(n - 1) / (1 + n) : 1;
+	return n ? factorial(2 * n)/(factorial(n+1)*factorial(n)) : 1;
 }
+
+/*ull catalan(int n){
+	return n ? 2 * (2 * n - 1) * catalan(n - 1) / (1 + n) : 1;
+}*/
 
 int on_error(void){ 
 	fprintf(stderr, "Error\n"); 
