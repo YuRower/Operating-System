@@ -1,13 +1,4 @@
 # Operating-System
-Operating System labs
---------------------------
-run lab1
-
-gcc -o result/result main1.c functs.c -lm
-
-cd result
-
-./result
 
 --------------------------
 run SeparateCompilation
@@ -30,16 +21,4 @@ run MakeFile
 make finalresult
 
 ./finalresult
-
--------------------------
-run laba2 task0 
-use MakeFile
-
--------------------------
-run laba2 task4
-use SeparateCompilation
-
--------------------------------
-run laba3 
-use MakeFile
 
