@@ -12,6 +12,8 @@ if (signo == SIGINT)
 printf("Захвачен сигнал SIGINT!\n");
 else if (signo == SIGTERM)
 printf("Захвачен сигнал SIGTERM!\n");
+else if (signo == SIGUSR1)
+printf("Захвачен сигнал SIGUSR1\n");
 else {
 /* это никогда не должно случаться */
 fprintf(stderr, "Неожиданный сигнал!\n");

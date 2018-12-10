@@ -21,7 +21,7 @@ int main(void){
 	action.sa_sigaction = my_handler;
 
 	sigaction(SIGUSR1, &action, NULL);
-	//sigaction(SIGTERM, &action, NULL);
+	sigaction(SIGTERM, &action, NULL);
 
 	pid_t child_pid = fork();
 	if(child_pid == 0){

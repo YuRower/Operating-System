@@ -32,6 +32,7 @@ void parsearg(int argc, char ** argv){
 				break;
 			case 's':
 				str = optarg;
+				break;
 			case '?':
 				fprintf(stderr, "%s\n", "Unknown option");
 				break;

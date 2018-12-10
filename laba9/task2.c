@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <semaphore.h>
+#include <signal.h>
 
 int on_error(char * err_info){ 
   fprintf(stderr, "%s Error\n" , err_info); 
@@ -29,6 +30,7 @@ void destroy(void){
 	free(threads);
 	pthread_cond_destroy(&cond);
 	pthread_mutex_destroy(&mutex);
+	exit(-1);
 }
 
 void init(void)
@@ -69,7 +71,7 @@ void * therad_consumer(void * arg){
 	while(1){
 		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &old_cancel_state);
 		pthread_mutex_lock(&mutex);
-		pthread_cond_wait(&cond, &mutex);
+		pthread_cond_wait(&cond, &mutex);//block
 		fprintf(stdout, "id: %lu read: %d\n", pthread_self(), glob_var);
 		pthread_mutex_unlock(&mutex);
 		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &old_cancel_state);
@@ -139,5 +141,6 @@ int main(int argc, char ** argv){
 	}
 	printf("all thread were canceled\n");
     printf("exit\n");
+  //  kill(getppid(), SIGTERM);
 	return EXIT_SUCCESS;
 }
