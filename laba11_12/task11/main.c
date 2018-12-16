@@ -21,28 +21,8 @@ char *append(const char *s, char c){
     buf[len + 1] = '\0';
     return strdup(buf);
 }
-
 void sg_handler(int signo){printf("RECEIVE SIGNAL\n");}
-
-/*void sighand(int signo, siginfo_t *info, void *extra){
-	shm_id = info->si_value.sival_int;
-}*/
-//si_int
 int main(int argc, char const *argv[]){
-
-	/*sigset_t mask;
-	sigset_t old_mask;
-
-	sigemptyset(&mask);
-	sigaddset(&mask, SIGUSR1);
-	sigprocmask(SIG_BLOCK, &mask, &old_mask);
-
-	struct sigaction action;
-	sigemptyset(&action.sa_mask); 
-	action.sa_flags = SA_SIGINFO;
-	action.sa_sigaction = sighand;
-
-	sigaction(SIGUSR1, &action, NULL);*/
 
 	if(signal(SIGUSR2, sg_handler) == SIG_ERR){
 		fprintf(stderr, "\ncan't catch SIGUSR1\n");
